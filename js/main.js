@@ -7,7 +7,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 //source: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-console.log (getRandomInt (0, 10));
+getRandomInt (0, 10);
 
 function getStringLength(chekingString, maxLength) {
   if (chekingString <= maxLength) {
@@ -15,7 +15,7 @@ function getStringLength(chekingString, maxLength) {
   }
   return false;
 }
-console.log (getStringLength());
+getStringLength();
 
 function getRandomIntPoint(min, max) {
   if (max <= min){
@@ -23,5 +23,4 @@ function getRandomIntPoint(min, max) {
   }
   return Math.random() * (max - min) + min;
 }
-
-console.log(getRandomIntPoint(3.1, 5.2));
+getRandomIntPoint(3.1, 5.2);
