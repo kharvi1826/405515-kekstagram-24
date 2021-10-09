@@ -1,30 +1,3 @@
-// function getRandomInt(min, max) {
-//   if (max <= min){
-//     return min;
-//   }
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-// //source: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-// getRandomInt (0, 10);
-
-// function getStringLength(chekingString, maxLength) {
-//   if (chekingString <= maxLength) {
-//     return true;
-//   }
-//   return false;
-// }
-// getStringLength();
-
-// function getRandomIntPoint(min, max) {
-//   if (max <= min){
-//     return max;
-//   }
-//   return Math.random() * (max - min) + min;
-// }
-// getRandomIntPoint(3.1, 5.2);
-
 const getRandomInt = (min, max) => {
   if (min >= 0 && max >= 0){
     if (min === max) {
@@ -48,8 +21,7 @@ const NAMES = ['Римма', 'Света', 'Федор', 'Галя', 'Ваня',
 const itemsCount = 25;
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
-const MIN_ID_AVATAR = 1;
-const MAX_ID_AVATAR = 6;
+
 
 const usedIndexes = new Set();
 const getUniqueRandomNumber = (callback) => {
@@ -67,7 +39,7 @@ const getRandomElement = (elements) => elements[getRandomInt(0, elements.length 
 const getComment = () => (
   {
     id: getUniqueRandomNumber(getRandomInt),
-    avatar: 'img/avatar-{getRandomInt(MIN_ID_AVATAR, MAX_ID_AVATAR)}.svg',
+    avatar: 'img/avatar-{getRandomInt(1, 6)}.svg',
     message: getRandomElement(MESSAGES),
     name: getRandomElement(NAMES),
   });
@@ -79,3 +51,8 @@ const getPhoto = (index) =>  ({
   likes: getRandomInt(MIN_LIKES, MAX_LIKES),
   comments: Array.from({length: getRandomInt(1, 10)}, getComment),
 });
+
+const gallery = new Array(itemsCount).fill(null).map((index) => getPhoto(index + 1));
+
+gallery;
+
