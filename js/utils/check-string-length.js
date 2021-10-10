@@ -1,5 +1,3 @@
-function checkStringLength (string, length) {
-  return string.length <= length;
-}
+const checkStringLength = (checkString, maxLength) => checkString.length <= maxLength;
 
-checkStringLength (20);
+export{checkStringLength};
