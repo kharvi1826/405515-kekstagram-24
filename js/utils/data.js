@@ -28,8 +28,8 @@ const getPhoto = (index) =>  ({
   comments: Array.from({length: getRandomInt(1, 10)}, getComment),
 });
 
-const exportGallery = new Array(itemsCount).fill(null).map((index) => getPhoto(index + 1));
+const createGallery = new Array(itemsCount).fill(null).map((index) => getPhoto(index + 1));
 
-exportGallery;
+createGallery;
 
-export {exportGallery};
+export {createGallery};

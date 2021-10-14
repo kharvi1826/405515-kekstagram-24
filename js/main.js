@@ -1,7 +1,7 @@
 import {checkStringLength} from './utils/check-string-length.js';
-import {exportGallery} from './utils/basic.js';
+import {createGallery} from './utils/data.js';
 
 checkStringLength('Elizabeth', 10);
 
-exportGallery;
+createGallery;
 
