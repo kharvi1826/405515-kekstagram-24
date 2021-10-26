@@ -1,10 +1,10 @@
-import { getRandomInt } from './get-random-integer.js';
-import { getUniqueRandomNumber } from './get-unique-random-number.js';
+import { getRandomInt } from './utils.js';
+import { getUniqueRandomNumber } from './utils';
 
 const DESCRIPTIONS = ['Кот', 'Бабочка', 'Снежинка', 'Автомобиль', 'Колокольчик', 'Мороженое'];
 const MESSAGES = ['Когда вы делаете фотографию, хорошо бы убирать палец из кадра.', 'В целом всё неплохо. Но не всё.'];
 const NAMES = ['Римма', 'Света', 'Федор', 'Галя', 'Ваня', 'Илья', 'Олег', 'Коля' , 'Аля'];
-const itemsCount = 25;
+const POSTS = 25;
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
 const MIN_ID_AVATAR = 1;
@@ -28,8 +28,6 @@ const getPhoto = (index) =>  ({
   comments: Array.from({length: getRandomInt(1, 10)}, getComment),
 });
 
-const createGallery = new Array(itemsCount).fill(null).map((index) => getPhoto(index + 1));
-
-createGallery;
+const createGallery = new Array(POSTS).fill(null).map((index) => getPhoto(index + 1));
 
 export {createGallery};

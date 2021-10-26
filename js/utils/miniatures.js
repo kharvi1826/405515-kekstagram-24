@@ -2,8 +2,8 @@ const pictureContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const fragment = document.createDocumentFragment();
 
-const createPhotoDescription = (array) => {
-  array.forEach((miniature) => {
+const createMiniatures = (createGallery) => {
+  createGallery.forEach((miniature) => {
     const photoElement = pictureTemplate.cloneNode(true);
     photoElement.querySelector('.picture__img').src = miniature.url;
     photoElement.querySelector('.picture__likes').textContent = miniature.likes;
@@ -11,6 +11,7 @@ const createPhotoDescription = (array) => {
     fragment.appendChild(photoElement);
   });
   pictureContainer.appendChild(fragment);
+
 };
 
-export {createPhotoDescription};
+export {createMiniatures};
