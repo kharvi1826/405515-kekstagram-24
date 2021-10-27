@@ -5,8 +5,8 @@ import {showBigPicture} from './utils/full-photos.js';
 
 checkStringLength('Elizabeth', 10);
 
-createGallery;
-createMiniatures;
-showBigPicture;
+createGallery ();
+createMiniatures ();
+showBigPicture ();
 
 
